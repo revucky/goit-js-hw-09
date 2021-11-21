@@ -14,7 +14,6 @@ const handleBtnSubmit = e => {
   const amount = +refs.inputAmount.value;
   const delay = +refs.inputDelay.value;
   const baseStep = +refs.inputStep.value;
-  // setTimeout(() => {
   for (let i = 0; i < amount; i++) {
     createPromise(i + 1, delay + baseStep * i)
       .then(({ position, delay }) => {
@@ -24,7 +23,6 @@ const handleBtnSubmit = e => {
         Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
       });
   }
-  // }, delay);
 };
 
 function createPromise(position, delay) {
